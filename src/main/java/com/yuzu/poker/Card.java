@@ -26,6 +26,21 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return suit.getSymbol() + rank.getSymbol();
+        String color = "\u001b[0m";
+        switch (suit) {
+            case HEART:
+                color = "\u001b[31m";
+                break;
+            case DIAMOND:
+                color = "\u001b[34m";
+                break;
+            case CLUB:
+                color = "\u001b[32m";
+                break;
+            case SPADE:
+                color = "\u001b[33m";
+                break;
+        }
+        return color + suit.getSymbol() + rank.getSymbol() + "\u001b[0m";
     }
 }

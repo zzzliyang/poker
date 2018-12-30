@@ -14,8 +14,8 @@ public class HandValue implements Comparable<HandValue> {
     @Override
     public int compareTo(HandValue o) {
         // compare hands ranking first
-        if (this.handType.getRankValue() < o.handType.getRankValue()) return -1;
-        if (this.handType.getRankValue() > o.handType.getRankValue()) return 1;
+        int handTypeCompare = Integer.compare(this.handType.getRankValue(), o.handType.getRankValue());
+        if (handTypeCompare != 0) return handTypeCompare;
         // if ties, then compare with a same hand type
         return Integer.compare(this.cardValue, o.cardValue);
     }

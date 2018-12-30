@@ -13,7 +13,6 @@ public class BestHand {
         this.handValue = handValue;
     }
 
-
     public List<Card> getCards() {
         return cards;
     }
